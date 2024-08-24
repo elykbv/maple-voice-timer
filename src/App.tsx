@@ -1,10 +1,10 @@
-
+import KalosTimer from "./pages/kalos"
 
 function App() {
 
   return (
     <>
-
+      <KalosTimer />
     </>
   )
 }
