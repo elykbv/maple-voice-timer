@@ -2,7 +2,7 @@ import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
 import { commands } from "./commands";
-import { Alert, Button } from "antd";
+import { Alert, Button, Col, Row } from "antd";
 import Systems from "./systems";
 
 function KalosTimer() {
@@ -17,13 +17,20 @@ function KalosTimer() {
       <Button onClick={() => SpeechRecognition.stopListening()}>
         Stop Listening
       </Button>
-      {listening ? (
-        <Alert type="success" message="Listening" />
-      ) : (
-        <Alert type="error" message="Not Listening" />
-      )}
-
-      <Systems />
+      <Row>
+        <Col span={24}>
+          {listening ? (
+            <Alert type="success" message="Listening" />
+          ) : (
+            <Alert type="error" message="Not Listening" />
+          )}
+        </Col>
+      </Row>
+      <Row>
+        <Col span={24}>
+          <Systems />
+        </Col>
+      </Row>
     </>
   );
 }
